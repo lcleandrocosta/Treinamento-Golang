@@ -1,5 +1,7 @@
 # Treinamento Golang
 
+![Alt text](resources/go.gif)
+
 ## 👀 Sobre
 
 Treinamento **Aprenda Golang** com **Tiago Temporin** no canal **Youtube**.
