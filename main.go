@@ -8,24 +8,48 @@
 package main
 
 //Declaração dos packages para uso na aplicação.
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
 
 /* Variável com escopo de package 
 	 está disponível para qualquer 
 	 arquivo ou função em escopo de package
 */
-var titulo, subtitulo string
-var WHITE_BACKGROUND, GREENCOLOR = "\u001B[47m", "\u001B[32m"
-var YELLOW_COLOR, RESET_COLOR = "\u001B[33m", "\u001B[0m"
+var titulo string
+var YELLOW_BACKGROUND  = "\u001B[43m"
+var GREENCOLOR, WHITE_COLOR, RESET_COLOR = "\u001B[32m", "\u001B[37m", "\u001B[0m"
 
 /* Função necessária para executar uma aplicação */
 func main() {
-	formatarCabecalho("Aprendendo Golang", "Funções")
+	formatarCabecalho("Aprendendo a linguagem:")
+	apresentarLogo()
 }
 
-func formatarCabecalho(titulo, subtitulo string) {
+func formatarCabecalho(titulo string) {
 	fmt.Println("")
-	fmt.Println(GREENCOLOR, "************", WHITE_BACKGROUND, titulo,RESET_COLOR, GREENCOLOR, "**************", RESET_COLOR)
-	fmt.Println(YELLOW_COLOR,"# Assunto:", subtitulo, RESET_COLOR)
+	fmt.Println(GREENCOLOR, "************", YELLOW_BACKGROUND, WHITE_COLOR, titulo, RESET_COLOR, GREENCOLOR, "**************", RESET_COLOR)
 	fmt.Println("")
+}
+
+func apresentarLogo() {
+	var bi = "\\" //Barra invertida
+	fmt.Println("  _________          __ ")
+	timer()
+	fmt.Println(" /  ______/  ____   |  |   ____      ____     ____")
+	timer()
+	fmt.Printf("/   %s  __   /    %s  |  |  %s__   %s   /    %s   /  ___%s \n", bi,bi, bi, bi, bi, bi)
+	timer()
+	fmt.Printf("%s    %s___%s (  <_> ) |__|__ / __  %s |  |   %s /  / _/ >\n" ,bi, bi, bi, bi, bi)
+	timer()
+	fmt.Printf(" %s______  / %s____/  |______(___   /___|   /%s____   /\n", bi,bi,bi)
+	timer()
+	fmt.Printf("        %s/                      %s/      %s//_______/\n", bi,bi,bi)
+	fmt.Println()
+}
+
+func timer() {
+	newtimer := time.NewTimer(1 * time.Second)
+	<-newtimer.C
 }
