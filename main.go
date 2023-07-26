@@ -18,8 +18,8 @@ import (
 	 arquivo ou função em escopo de package
 */
 var titulo string
-var YELLOW_BACKGROUND  = "\u001B[43m"
-var GREENCOLOR, WHITE_COLOR, RESET_COLOR = "\u001B[32m", "\u001B[37m", "\u001B[0m"
+var YELLOW_BACKGROUND = "\u001B[43m"
+var BLUE, GREENCOLOR, WHITE_COLOR, RESET_COLOR = "\u001B[34m", "\u001B[32m", "\u001B[37m", "\u001B[0m"
 
 /* Função necessária para executar uma aplicação */
 func main() {
@@ -30,11 +30,12 @@ func main() {
 func formatarCabecalho(titulo string) {
 	fmt.Println("")
 	fmt.Println(GREENCOLOR, "************", YELLOW_BACKGROUND, WHITE_COLOR, titulo, RESET_COLOR, GREENCOLOR, "**************", RESET_COLOR)
-	fmt.Println("")
 }
 
 func apresentarLogo() {
 	var bi = "\\" //Barra invertida
+
+	fmt.Println(BLUE)
 	fmt.Println("  _________          __ ")
 	timer()
 	fmt.Println(" /  ______/  ____   |  |   ____      ____     ____")
@@ -47,6 +48,7 @@ func apresentarLogo() {
 	timer()
 	fmt.Printf("        %s/                      %s/      %s//_______/\n", bi,bi,bi)
 	fmt.Println()
+	fmt.Println(GREENCOLOR, "********************************************************", RESET_COLOR)
 }
 
 func timer() {
