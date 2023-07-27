@@ -29,7 +29,8 @@ func main() {
 
 func formatarCabecalho(titulo string) {
 	fmt.Println("")
-	fmt.Println(GREENCOLOR, "************", YELLOW_BACKGROUND, WHITE_COLOR, titulo, RESET_COLOR, GREENCOLOR, "**************", RESET_COLOR)
+	fmt.Println(GREENCOLOR, "************", YELLOW_BACKGROUND, WHITE_COLOR, titulo, RESET_COLOR, 
+	GREENCOLOR, "**************", RESET_COLOR)
 }
 
 func apresentarLogo() {
